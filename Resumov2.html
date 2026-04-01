@@ -1,0 +1,607 @@
+<!DOCTYPE html><html><head>
+      <title>Resumov2</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="-guia-definitivo-ciência-de-dados-para-negócios">📚 Guia Definitivo: Ciência de Dados para Negócios </h1>
+<h2 id="1-introdução-ao-aprendizado-de-máquina-aula-02">1. Introdução ao Aprendizado de Máquina (Aula 02) </h2>
+<p><strong>Conceitos-Chave:</strong> Em vez de programar regras fixas, o modelo aprende padrões a partir dos dados (instâncias e características) para gerar previsões.</p>
+<ul>
+<li><strong>Explicação Simples:</strong> É como ensinar uma criança a reconhecer frutas. Você não explica a botânica da maçã; você mostra várias maçãs (dados) e diz "isso é uma maçã" (rótulo). Com o tempo, ela aprende a identificar uma maçã que nunca viu antes.</li>
+<li><strong>Explicação Intermediária:</strong> Você fornece um <em>Dataset</em> com características (<em>Features</em>, ex: tamanho, cor) e rótulos (<em>Labels</em>, ex: nome da fruta). O algoritmo encontra a relação matemática entre as características e o rótulo.</li>
+<li><strong>Técnica / Profissional:</strong> Um modelo ajusta iterativamente seus hiperparâmetros sobre dados de Treino para minimizar uma função de custo, garantindo capacidade de generalização para dados não vistos (Validação/Teste).</li>
+</ul>
+<p>⚠️ <strong>Pegadinhas:</strong></p>
+<ul>
+<li><strong>Supervisionado vs Não Supervisionado:</strong> Supervisionado tem rótulo (ex: prever preço de casa, classificar spam). Não Supervisionado não tem rótulo (ex: agrupar clientes por perfil de compra).</li>
+</ul>
+<hr>
+<h2 id="2-pré-processamento-e-engenharia-de-características-aula-03">2. Pré-Processamento e Engenharia de Características (Aula 03) </h2>
+<p><strong>Conceitos-Chave:</strong> Algoritmos não lidam bem com dados ausentes, escalas diferentes ou texto. A limpeza é a etapa mais demorada de um projeto.</p>
+<ul>
+<li><strong>Explicação Simples:</strong> É como preparar os ingredientes antes de cozinhar. Você precisa lavar, descascar, tirar as partes estragadas (dados nulos) e picar tudo do mesmo tamanho (escalonamento) para que o prato (modelo) não dê errado.</li>
+<li><strong>Explicação Intermediária:</strong> Se a idade vai de 0 a 100 e a renda de 0 a 150.000, o modelo vai achar que a renda é mais importante só porque o número é maior. Por isso, "esmagamos" tudo para a mesma escala. Além disso, transformamos categorias (como "Sim" ou "Não") em números (1 e 0), pois a matemática não lê letras.</li>
+<li><strong>Técnica / Profissional:</strong> O tratamento de dados envolve imputação (preenchimento de valores nulos), codificação de variáveis categóricas (One-Hot Encoding) e padronização (<code>StandardScaler</code> com média 0 e variância 1) ou normalização (<code>MinMaxScaler</code>).</li>
+</ul>
+<p>⚠️ <strong>Pegadinhas:</strong></p>
+<ul>
+<li>Nunca remover linhas com dados nulos se isso significar perder muita informação útil. A imputação (ex: preencher com a mediana) é geralmente preferível.</li>
+</ul>
+<hr>
+<h2 id="3-regressão-linear-gradiente-descendente-e-regularização-aula-04">3. Regressão Linear, Gradiente Descendente e Regularização (Aula 04) </h2>
+<p><strong>Conceitos-Chave:</strong> Encontrar a reta que melhor se ajusta aos dados numéricos contínuos, minimizando o Erro Quadrático Médio (MSE).</p>
+<ul>
+<li><strong>Explicação Simples:</strong> Imagine vários pontos desenhados em um papel. A Regressão Linear tenta passar uma reta reta exatamente no meio deles.</li>
+<li><strong>Explicação Intermediária:</strong> O "Gradiente Descendente" é o motor que ajusta essa reta. Pense num alpinista com os olhos vendados tentando chegar ao fundo de um vale. Ele sente a inclinação do chão e dá pequenos passos (Taxa de Aprendizado) até chegar ao ponto mais baixo (menor erro).</li>
+<li><strong>Técnica / Profissional:</strong> O modelo pode sofrer de <em>Overfitting</em> (decorar os dados de treino, gerando alta variância) ou <em>Underfitting</em> (não aprender nada, alto viés). A Regularização é aplicada à função de custo para penalizar coeficientes muito grandes. A penalidade L2 (Ridge) encolhe os coeficientes, enquanto a L1 (Lasso) pode zerar coeficientes inúteis.</li>
+</ul>
+<h3 id="-prática-em-código-aula-04">💻 Prática em Código (Aula 04) </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword keyword-import">import</span> LinearRegression<span class="token punctuation">,</span> SGDRegressor<span class="token punctuation">,</span> Ridge<span class="token punctuation">,</span> Lasso
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> PolynomialFeatures
+
+<span class="token comment"># 1. Regressão Linear Simples</span>
+modelo_linear <span class="token operator">=</span> LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+modelo_linear<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_treino<span class="token punctuation">,</span> y_treino<span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Ponto de corte:"</span><span class="token punctuation">,</span> modelo_linear<span class="token punctuation">.</span>intercept_<span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Inclinação da reta:"</span><span class="token punctuation">,</span> modelo_linear<span class="token punctuation">.</span>coef_<span class="token punctuation">)</span>
+
+<span class="token comment"># 2. Gradiente Descendente Estocástico (Para Datasets gigantes)</span>
+<span class="token comment"># Nota: y.ravel() é usado para transformar a matriz em um vetor 1D</span>
+modelo_sgd <span class="token operator">=</span> SGDRegressor<span class="token punctuation">(</span>max_iter<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> tol<span class="token operator">=</span><span class="token number">1e-5</span><span class="token punctuation">,</span> eta0<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+modelo_sgd<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_treino<span class="token punctuation">,</span> y_treino<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 3. Regressão Polinomial (Quando os dados fazem uma curva)</span>
+<span class="token comment"># Cria características elevadas ao quadrado (grau 2)</span>
+caracteristicas_polinomiais <span class="token operator">=</span> PolynomialFeatures<span class="token punctuation">(</span>degree<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> include_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+X_treino_polinomial <span class="token operator">=</span> caracteristicas_polinomiais<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>X_treino<span class="token punctuation">)</span>
+modelo_linear<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_treino_polinomial<span class="token punctuation">,</span> y_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># 4. Regularização (Evitando Overfitting)</span>
+modelo_ridge <span class="token operator">=</span> Ridge<span class="token punctuation">(</span>alpha<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">,</span> solver<span class="token operator">=</span><span class="token string">"cholesky"</span><span class="token punctuation">)</span> <span class="token comment"># Penaliza pesos altos (L2)</span>
+modelo_lasso <span class="token operator">=</span> Lasso<span class="token punctuation">(</span>alpha<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span> <span class="token comment"># Pode zerar pesos irrelevantes (L1)</span>
+</code></pre><hr>
+<h2 id="4-regressão-logística-e-métricas-aula-05">4. Regressão Logística e Métricas (Aula 05) </h2>
+<p><strong>Conceitos-Chave:</strong> Apesar do nome "Regressão", é um algoritmo de <strong>Classificação</strong>. Usa a função Sigmoide para calcular a probabilidade de uma instância pertencer a uma classe (ex: Spam vs. Não Spam).</p>
+<ul>
+<li><strong>Explicação Simples:</strong> Ele responde perguntas de "Sim ou Não". Calcula a porcentagem de chance de algo ser "Sim". Se der mais de 50%, ele classifica como "Sim".</li>
+<li><strong>Explicação Intermediária:</strong> A função de custo aqui não é o erro da distância (MSE), mas sim o <em>Log Loss</em> (Entropia Cruzada), que dá uma punição enorme ao modelo se ele disser que tem 99% de certeza que um e-mail é normal, mas na verdade era vírus.</li>
+<li><strong>Técnica / Profissional:</strong> As métricas de avaliação são críticas. <em>Acurácia</em> (taxa de acerto geral); <em>Precisão</em> (dos que classifiquei como positivo, quantos eram? - Evita falsos positivos); <em>Recall/Revocação</em> (dos positivos reais, quantos encontrei? - Evita falsos negativos); <em>F1-Score</em> (Média harmônica entre Precisão e Recall).</li>
+</ul>
+<h3 id="-prática-em-código-aula-05">💻 Prática em Código (Aula 05) </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword keyword-import">import</span> LogisticRegression
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword keyword-import">import</span> confusion_matrix<span class="token punctuation">,</span> precision_score<span class="token punctuation">,</span> recall_score<span class="token punctuation">,</span> roc_auc_score
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> cross_val_predict
+
+<span class="token comment"># 1. Treinamento (O parâmetro C é o inverso do alpha. C maior = menos regularização)</span>
+modelo_logistico <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span>C<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+modelo_logistico<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_treino<span class="token punctuation">,</span> y_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># 2. Pegadinha: predict vs predict_proba</span>
+classe_prevista <span class="token operator">=</span> modelo_logistico<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X_teste<span class="token punctuation">)</span> <span class="token comment"># Retorna True/False ou 1/0</span>
+probabilidade <span class="token operator">=</span> modelo_logistico<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>X_teste<span class="token punctuation">)</span> <span class="token comment"># Retorna as % exatas</span>
+
+<span class="token comment"># 3. Métricas</span>
+<span class="token comment"># Usamos Validação Cruzada para não testar o modelo nos mesmos dados que ele treinou</span>
+previsoes_cruzadas <span class="token operator">=</span> cross_val_predict<span class="token punctuation">(</span>modelo_logistico<span class="token punctuation">,</span> X_treino<span class="token punctuation">,</span> y_treino<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+matriz_confusao <span class="token operator">=</span> confusion_matrix<span class="token punctuation">(</span>y_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span>
+precisao <span class="token operator">=</span> precision_score<span class="token punctuation">(</span>y_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span>
+revocacao <span class="token operator">=</span> recall_score<span class="token punctuation">(</span>y_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span> <span class="token comment"># Recall</span>
+
+<span class="token comment"># 4. Ajuste Manual de Fronteira de Decisão (Threshold)</span>
+<span class="token comment"># Obtendo a pontuação bruta da função de decisão</span>
+pontuacoes_decisao <span class="token operator">=</span> cross_val_predict<span class="token punctuation">(</span>modelo_logistico<span class="token punctuation">,</span> X_treino<span class="token punctuation">,</span> y_treino<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">"decision_function"</span><span class="token punctuation">)</span>
+
+limite_personalizado <span class="token operator">=</span> <span class="token number">0.3</span> <span class="token comment"># Abaixando de 0.0 para 0.3 para focar no Recall</span>
+previsoes_personalizadas <span class="token operator">=</span> <span class="token punctuation">(</span>pontuacoes_decisao <span class="token operator">&gt;</span> limite_personalizado<span class="token punctuation">)</span>
+</code></pre><hr>
+<h2 id="5-projeto-end-to-end-e-pipelines-automáticos-aula-06">5. Projeto End-to-End e Pipelines Automáticos (Aula 06) </h2>
+<p><strong>Conceitos-Chave:</strong> Organizar todo o fluxo de trabalho (limpeza, transformação, modelagem e exportação) de forma contínua e imune ao Vazamento de Dados (<em>Data Leakage</em>).</p>
+<ul>
+<li><strong>Explicação Simples:</strong> É a esteira da fábrica. O ingrediente cru entra de um lado, é lavado, cortado, temperado e o prato sai pronto do outro lado, tudo automatizado.</li>
+<li><strong>Explicação Intermediária:</strong> O Scikit-Learn usa <code>Pipelines</code> para empilhar passos. O modelo só vê os dados depois que eles passam por todas as transformações (imputação de nulos, One-Hot Encoding, padronização).</li>
+<li><strong>Técnica / Profissional:</strong> O <code>ColumnTransformer</code> permite ramificar a esteira: dados numéricos vão para um pipeline matemático, dados em texto vão para um pipeline categórico. Para achar os melhores parâmetros do modelo automaticamente sem chutar, usamos o <code>GridSearchCV</code> (testa combinações fixas) ou o <code>RandomizedSearchCV</code> (testa aleatoriamente dentro de um intervalo estatístico).</li>
+</ul>
+<h3 id="-prática-em-código-aula-06">💻 Prática em Código (Aula 06) </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> numpy <span class="token keyword keyword-as">as</span> np
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> StratifiedShuffleSplit<span class="token punctuation">,</span> GridSearchCV
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>pipeline <span class="token keyword keyword-import">import</span> make_pipeline
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>compose <span class="token keyword keyword-import">import</span> make_column_transformer<span class="token punctuation">,</span> make_column_selector
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>impute <span class="token keyword keyword-import">import</span> SimpleImputer
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> StandardScaler<span class="token punctuation">,</span> OneHotEncoder
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword keyword-import">import</span> RandomForestRegressor
+<span class="token keyword keyword-import">import</span> joblib
+
+<span class="token comment"># 1. Amostragem Estratificada (Mantém a proporção das categorias da vida real)</span>
+<span class="token comment"># Supondo que "categoria_renda" seja uma coluna importante no dataset "dados_habitacao"</span>
+separador <span class="token operator">=</span> StratifiedShuffleSplit<span class="token punctuation">(</span>n_splits<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-for">for</span> indice_treino<span class="token punctuation">,</span> indice_teste <span class="token keyword keyword-in">in</span> separador<span class="token punctuation">.</span>split<span class="token punctuation">(</span>dados_habitacao<span class="token punctuation">,</span> dados_habitacao<span class="token punctuation">[</span><span class="token string">"categoria_renda"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conjunto_treino <span class="token operator">=</span> dados_habitacao<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>indice_treino<span class="token punctuation">]</span>
+    conjunto_teste <span class="token operator">=</span> dados_habitacao<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>indice_teste<span class="token punctuation">]</span>
+
+<span class="token comment"># 2. Criando as esteiras (Pipelines) de tratamento</span>
+pipeline_numerico <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    SimpleImputer<span class="token punctuation">(</span>strategy<span class="token operator">=</span><span class="token string">"median"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># Preenche nulos numéricos com a mediana</span>
+    StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>                  <span class="token comment"># Padroniza escalas</span>
+<span class="token punctuation">)</span>
+
+pipeline_categorico <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    SimpleImputer<span class="token punctuation">(</span>strategy<span class="token operator">=</span><span class="token string">"most_frequent"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># Preenche nulos de texto com a moda</span>
+    OneHotEncoder<span class="token punctuation">(</span>handle_unknown<span class="token operator">=</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> sparse_output<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token comment"># Converte texto para colunas 0 e 1</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 3. Unindo as esteiras (Column Transformer)</span>
+preprocessamento_total <span class="token operator">=</span> make_column_transformer<span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>pipeline_numerico<span class="token punctuation">,</span> make_column_selector<span class="token punctuation">(</span>dtype_include<span class="token operator">=</span>np<span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>pipeline_categorico<span class="token punctuation">,</span> make_column_selector<span class="token punctuation">(</span>dtype_include<span class="token operator">=</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 4. Pipeline Completo: Tratamento + Modelo Final</span>
+pipeline_final <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    preprocessamento_total<span class="token punctuation">,</span>
+    RandomForestRegressor<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 5. Otimização de Hiperparâmetros (Grid Search)</span>
+parametros_para_testar <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'randomforestregressor__max_features'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+busca_em_grade <span class="token operator">=</span> GridSearchCV<span class="token punctuation">(</span>pipeline_final<span class="token punctuation">,</span> parametros_para_testar<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> scoring<span class="token operator">=</span><span class="token string">'neg_root_mean_squared_error'</span><span class="token punctuation">)</span>
+busca_em_grade<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_treino<span class="token punctuation">,</span> y_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># Ver qual foi o melhor modelo encontrado</span>
+melhor_modelo <span class="token operator">=</span> busca_em_grade<span class="token punctuation">.</span>best_estimator_
+
+<span class="token comment"># 6. Salvar o modelo para colocar em produção (Exportação)</span>
+joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>melhor_modelo<span class="token punctuation">,</span> <span class="token string">"meu_modelo_otimizado.pkl"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># (No outro dia, o servidor de produção carregaria assim:)</span>
+<span class="token comment"># modelo_producao = joblib.load("meu_modelo_otimizado.pkl")</span>
+<span class="token comment"># predições = modelo_producao.predict(novos_dados_do_cliente)</span>
+</code></pre><p>Aqui tens o guião de estudo completo e definitivo, restruturado num formato Markdown (<code>.md</code>) altamente visual, perfeito para leres no teu editor de código (como o VS Code), Obsidian ou Notion.</p>
+<p>Conforme pediste, todo o material das aulas 02 a 06 foi unificado. O código foi reescrito com variáveis e funções em português para que a lógica e a intuição por trás de cada linha fiquem cristalinas. Lembra-te apenas de que, na prática, os métodos oficiais da biblioteca Scikit-Learn (<code>fit</code>, <code>predict</code>, etc.) mantêm-se em inglês.</p>
+<p>O domínio destes ficheiros e destas ferramentas no Scikit-Learn garante a preparação ideal não só para a prova teórica e prática, mas também para os desafios técnicos exigidos nas vagas de nível júnior em Análise e Ciência de Dados na região de Sorocaba.</p>
+<hr>
+<h1 id="-guião-de-estudo-ciência-de-dados-para-negócios">📘 Guião de Estudo: Ciência de Dados para Negócios </h1>
+<h2 id="1-introdução-ao-aprendizado-de-máquina-aula-02-1">1. Introdução ao Aprendizado de Máquina (Aula 02) </h2>
+<p>Em vez de programar regras fixas, o modelo matemático aprende os padrões a partir dos dados (instâncias e características) e dos seus resultados, conseguindo generalizar e fazer previsões para novos dados.</p>
+<ul>
+<li><strong>Supervisionado:</strong> Os dados têm rótulos (a resposta certa já é conhecida). Usado para <strong>Regressão</strong> (prever valores numéricos, como preços) ou <strong>Classificação</strong> (prever categorias, como spam/não spam).</li>
+<li><strong>Não Supervisionado:</strong> Os dados não têm rótulos. O algoritmo procura padrões ocultos por si mesmo, como no agrupamento (Clustering) de perfis de clientes.</li>
+</ul>
+<hr>
+<h2 id="2-pré-processamento-e-engenharia-de-características-aula-03-1">2. Pré-processamento e Engenharia de Características (Aula 03) </h2>
+<p>Algoritmos não conseguem processar valores ausentes, textos puros ou escalas muito desproporcionais. A limpeza é a fundação de qualquer modelo.</p>
+<ul>
+<li><strong>Tratamento de Nulos:</strong> Evita eliminar linhas inteiras para não perderes informação valiosa. É preferível fazer a <strong>imputação</strong> (preencher os vazios com a média ou mediana).</li>
+<li><strong>Tratamento de Escalas:</strong> Se uma coluna varia de 0 a 100 e a outra de 0 a 10.000, o modelo dará mais peso à segunda. A Padronização (<code>StandardScaler</code>) ou Normalização (<code>MinMaxScaler</code>) nivela as grandezas.</li>
+</ul>
+<hr>
+<h2 id="3-regressão-linear-gradiente-descendente-e-regularização-aula-04-1">3. Regressão Linear, Gradiente Descendente e Regularização (Aula 04) </h2>
+<p>A regressão procura traçar a melhor reta (ou curva) possível que passe perto de todos os pontos de dados, minimizando o Erro Quadrático Médio (MSE). O <strong>Gradiente Descendente</strong> é o otimizador que vai ajustando o ângulo dessa reta passo a passo até encontrar o ponto de erro mínimo.</p>
+<h3 id="-prática-em-código-regressão-linear">💻 Prática em Código: Regressão Linear </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword keyword-import">import</span> LinearRegression<span class="token punctuation">,</span> SGDRegressor<span class="token punctuation">,</span> Ridge<span class="token punctuation">,</span> Lasso
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> PolynomialFeatures
+
+<span class="token comment"># --- 1. REGRESSÃO LINEAR SIMPLES ---</span>
+modelo_linear <span class="token operator">=</span> LinearRegression<span class="token punctuation">(</span><span class="token punctuation">)</span>
+modelo_linear<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> alvo_treino<span class="token punctuation">)</span>
+
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Ponto de Interceção (Y):"</span><span class="token punctuation">,</span> modelo_linear<span class="token punctuation">.</span>intercept_<span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">"Inclinação da Reta:"</span><span class="token punctuation">,</span> modelo_linear<span class="token punctuation">.</span>coef_<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 2. GRADIENTE DESCENDENTE ESTOCÁSTICO (SGD) ---</span>
+<span class="token comment"># Usado quando o dataset é demasiado grande para a memória</span>
+<span class="token comment"># O ravel() converte a matriz alvo num formato de lista 1D, exigido pelo SGD</span>
+modelo_gradiente <span class="token operator">=</span> SGDRegressor<span class="token punctuation">(</span>max_iter<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">,</span> tol<span class="token operator">=</span><span class="token number">1e-5</span><span class="token punctuation">,</span> eta0<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+modelo_gradiente<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> alvo_treino<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># --- 3. REGRESSÃO POLINOMIAL ---</span>
+<span class="token comment"># Usado quando os dados não formam uma linha reta, mas sim uma curva</span>
+gerador_polinomial <span class="token operator">=</span> PolynomialFeatures<span class="token punctuation">(</span>degree<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> include_bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+caracteristicas_curvas <span class="token operator">=</span> gerador_polinomial<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">)</span>
+modelo_linear<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_curvas<span class="token punctuation">,</span> alvo_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 4. REGULARIZAÇÃO (PENALIZAÇÃO) ---</span>
+<span class="token comment"># Evita o Overfitting (quando o modelo "decora" os dados e perde a flexibilidade)</span>
+modelo_ridge <span class="token operator">=</span> Ridge<span class="token punctuation">(</span>alpha<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">,</span> solver<span class="token operator">=</span><span class="token string">"cholesky"</span><span class="token punctuation">)</span> <span class="token comment"># Penaliza coeficientes muito altos (L2)</span>
+modelo_lasso <span class="token operator">=</span> Lasso<span class="token punctuation">(</span>alpha<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">)</span>                    <span class="token comment"># Força coeficientes inúteis a zero (L1)</span>
+</code></pre><hr>
+<h2 id="4-regressão-logística-e-métricas-de-classificação-aula-05">4. Regressão Logística e Métricas de Classificação (Aula 05) </h2>
+<p>Apesar do nome, a Regressão Logística é usada para <strong>Classificação</strong>. Utiliza a matemática da função Sigmoide em forma de "S" para comprimir qualquer resultado entre 0 e 1, devolvendo uma <strong>probabilidade</strong> (percentagem de chance).</p>
+<p>Avaliar um modelo de classificação com a Curva ROC e a métrica de Revocação (Recall) segue rigorosamente o mesmo princípio de avaliar a Sensibilidade e a Especificidade de um teste de diagnóstico laboratorial na biomedicina clínica. Não queremos falsos positivos que disparem alarmes errados, mas sobretudo não podemos tolerar falsos negativos numa classificação crítica.</p>
+<h3 id="-prática-em-código-regressão-logística">💻 Prática em Código: Regressão Logística </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword keyword-import">import</span> LogisticRegression
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword keyword-import">import</span> confusion_matrix<span class="token punctuation">,</span> precision_score<span class="token punctuation">,</span> recall_score<span class="token punctuation">,</span> roc_auc_score
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> cross_val_predict
+<span class="token keyword keyword-import">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword keyword-as">as</span> plt
+
+<span class="token comment"># --- 1. TREINAMENTO DO MODELO LOGÍSTICO ---</span>
+<span class="token comment"># O parâmetro C é o inverso da regularização (C maior = Menos regularização)</span>
+modelo_classificador <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span>C<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+modelo_classificador<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> categorias_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 2. CLASSE PREVISTA VS PROBABILIDADE ---</span>
+decisao_final <span class="token operator">=</span> modelo_classificador<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>novos_dados<span class="token punctuation">)</span> <span class="token comment"># Retorna a categoria (ex: 1 ou 0)</span>
+percentagens <span class="token operator">=</span> modelo_classificador<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>novos_dados<span class="token punctuation">)</span> <span class="token comment"># Retorna as % [4%, 96%]</span>
+
+<span class="token comment"># --- 3. AVALIAÇÃO COM VALIDAÇÃO CRUZADA ---</span>
+<span class="token comment"># Fazemos previsões em fatias ocultas dos dados para não testar com o que já foi treinado</span>
+previsoes_cruzadas <span class="token operator">=</span> cross_val_predict<span class="token punctuation">(</span>modelo_classificador<span class="token punctuation">,</span> caracteristicas_treino<span class="token punctuation">,</span> categorias_treino<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+matriz_erros <span class="token operator">=</span> confusion_matrix<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span>
+precisao <span class="token operator">=</span> precision_score<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span> <span class="token comment"># Dos que achei que eram X, quantos eram de facto?</span>
+revocacao <span class="token operator">=</span> recall_score<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span>   <span class="token comment"># De todos os X que existem, quantos consegui apanhar?</span>
+
+<span class="token comment"># --- 4. AJUSTE DO LIMITE (THRESHOLD) DA FRONTEIRA DE DECISÃO ---</span>
+<span class="token comment"># Queremos focar em aumentar a Revocação, logo baixamos a exigência do limite de 50% para 30%</span>
+pontuacoes_brutas <span class="token operator">=</span> cross_val_predict<span class="token punctuation">(</span>modelo_classificador<span class="token punctuation">,</span> caracteristicas_treino<span class="token punctuation">,</span> categorias_treino<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">"decision_function"</span><span class="token punctuation">)</span>
+limite_permissivo <span class="token operator">=</span> <span class="token number">0.3</span>
+novas_previsoes <span class="token operator">=</span> <span class="token punctuation">(</span>pontuacoes_brutas <span class="token operator">&gt;</span> limite_permissivo<span class="token punctuation">)</span>
+</code></pre><hr>
+<h2 id="5-projeto-de-ponta-a-ponta-e-automação-aula-06">5. Projeto de Ponta a Ponta e Automação (Aula 06) </h2>
+<p>O projeto final ensina a não executar os códigos de pré-processamento um a um. Num ambiente corporativo, crias um <code>Pipeline</code> completo (uma linha de montagem) que recebe os dados em bruto de um lado e entrega o modelo ajustado do outro.</p>
+<h3 id="-prática-em-código-pipeline-e-gridsearchcv">💻 Prática em Código: Pipeline e GridSearchCV </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> numpy <span class="token keyword keyword-as">as</span> np
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> StratifiedShuffleSplit<span class="token punctuation">,</span> GridSearchCV
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>pipeline <span class="token keyword keyword-import">import</span> make_pipeline
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>compose <span class="token keyword keyword-import">import</span> make_column_transformer<span class="token punctuation">,</span> make_column_selector
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>impute <span class="token keyword keyword-import">import</span> SimpleImputer
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> StandardScaler<span class="token punctuation">,</span> OneHotEncoder<span class="token punctuation">,</span> FunctionTransformer
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword keyword-import">import</span> RandomForestRegressor
+<span class="token keyword keyword-import">import</span> joblib
+
+<span class="token comment"># --- 1. AMOSTRAGEM ESTRATIFICADA ---</span>
+<span class="token comment"># Garante que as divisões de treino e teste mantêm a mesma proporção de uma categoria vital</span>
+separador_estratificado <span class="token operator">=</span> StratifiedShuffleSplit<span class="token punctuation">(</span>n_splits<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-for">for</span> indice_treino<span class="token punctuation">,</span> indice_teste <span class="token keyword keyword-in">in</span> separador_estratificado<span class="token punctuation">.</span>split<span class="token punctuation">(</span>dados_brutos<span class="token punctuation">,</span> dados_brutos<span class="token punctuation">[</span><span class="token string">"categoria_de_renda"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dados_treino <span class="token operator">=</span> dados_brutos<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>indice_treino<span class="token punctuation">]</span>
+    dados_teste <span class="token operator">=</span> dados_brutos<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>indice_teste<span class="token punctuation">]</span>
+
+<span class="token comment"># --- 2. TRANSFORMADOR MATEMÁTICO PERSONALIZADO ---</span>
+<span class="token comment"># Útil para aplicar operações que não vêm de fábrica, como calcular logaritmos</span>
+transformador_logaritmo <span class="token operator">=</span> FunctionTransformer<span class="token punctuation">(</span>np<span class="token punctuation">.</span>log<span class="token punctuation">,</span> inverse_func<span class="token operator">=</span>np<span class="token punctuation">.</span>exp<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 3. CRIAÇÃO DAS LINHAS DE MONTAGEM (PIPELINES) ---</span>
+esteira_numerica <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    SimpleImputer<span class="token punctuation">(</span>strategy<span class="token operator">=</span><span class="token string">"median"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># Tapa os buracos dos números com a mediana</span>
+    StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>                  <span class="token comment"># Equilibra a escala (Padronização)</span>
+<span class="token punctuation">)</span>
+
+esteira_texto <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    SimpleImputer<span class="token punctuation">(</span>strategy<span class="token operator">=</span><span class="token string">"most_frequent"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                    <span class="token comment"># Tapa buracos com a palavra mais comum</span>
+    OneHotEncoder<span class="token punctuation">(</span>handle_unknown<span class="token operator">=</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> sparse_output<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token comment"># Converte palavras em colunas binárias 0 e 1</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 4. ORQUESTRADOR CENTRAL (COLUMN TRANSFORMER) ---</span>
+<span class="token comment"># Diz qual esteira deve processar que tipo de dados</span>
+processador_global <span class="token operator">=</span> make_column_transformer<span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>esteira_numerica<span class="token punctuation">,</span> make_column_selector<span class="token punctuation">(</span>dtype_include<span class="token operator">=</span>np<span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>esteira_texto<span class="token punctuation">,</span> make_column_selector<span class="token punctuation">(</span>dtype_include<span class="token operator">=</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 5. PIPELINE FINAL COM O MODELO INCLUÍDO ---</span>
+modelo_de_ponta_a_ponta <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    processador_global<span class="token punctuation">,</span>
+    RandomForestRegressor<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span> <span class="token comment"># Floresta Aleatória</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 6. OTIMIZAÇÃO AUTOMÁTICA DE PARÂMETROS (GRID SEARCH) ---</span>
+<span class="token comment"># Em vez de tentar "chutar" qual é a melhor configuração, a máquina testa todas</span>
+parametros_para_testar <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'randomforestregressor__max_features'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+buscador_de_parametros <span class="token operator">=</span> GridSearchCV<span class="token punctuation">(</span>modelo_de_ponta_a_ponta<span class="token punctuation">,</span> parametros_para_testar<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> scoring<span class="token operator">=</span><span class="token string">'neg_root_mean_squared_error'</span><span class="token punctuation">)</span>
+buscador_de_parametros<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> alvo_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># --- 7. EXPORTAÇÃO E PERSISTÊNCIA ---</span>
+melhor_modelo_encontrado <span class="token operator">=</span> buscador_de_parametros<span class="token punctuation">.</span>best_estimator_
+joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>melhor_modelo_encontrado<span class="token punctuation">,</span> <span class="token string">"modelo_mercado_imobiliario.pkl"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Num servidor de produção na nuvem, importaríamos assim:</span>
+<span class="token comment"># modelo_em_producao = joblib.load("modelo_mercado_imobiliario.pkl")</span>
+</code></pre><hr>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">#</span> 📘 Guião Completo: Aprendizado de Máquina (Machine Learning)</span>
+
+<span class="token hr punctuation">---</span>
+
+<span class="token title important"><span class="token punctuation">##</span> 📌 Módulo 1: Introdução ao Aprendizado de Máquina (Aula 02)</span>
+
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Conceitos-Chave:</span><span class="token punctuation">**</span></span> Em vez de programar regras lógicas estáticas (programação tradicional), o modelo matemático aprende padrões a partir dos dados fornecidos para gerar previsões.
+
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 1 (Simples e Intuitivo):</span><span class="token punctuation">**</span></span> É como ensinar uma criança a distinguir cães de gatos. Não lhe explicas a biologia da espécie; mostras-lhe 100 fotos de cães e 100 fotos de gatos. O cérebro dela (o modelo) identifica os padrões sozinha.
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 2 (Intermediário com Exemplos):</span><span class="token punctuation">**</span></span> Tens um <span class="token italic"><span class="token punctuation">*</span><span class="token content">Dataset</span><span class="token punctuation">*</span></span> (conjunto de dados) com <span class="token bold"><span class="token punctuation">**</span><span class="token content">Características</span><span class="token punctuation">**</span></span> (peso, altura, cor) e <span class="token bold"><span class="token punctuation">**</span><span class="token content">Rótulos</span><span class="token punctuation">**</span></span> (se é cão ou gato). O algoritmo encontra a equação matemática que liga as características ao rótulo.
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 3 (Técnica e Profissional):</span><span class="token punctuation">**</span></span> Um modelo supervisionado mapeia vetores de entrada (variáveis independentes) para uma variável alvo. O objetivo é ajustar iterativamente os hiperparâmetros sobre os dados de <span class="token bold"><span class="token punctuation">**</span><span class="token content">Treino</span><span class="token punctuation">**</span></span> minimizando a função de custo, garantindo a capacidade de generalização para dados nunca vistos (dados de <span class="token bold"><span class="token punctuation">**</span><span class="token content">Teste</span><span class="token punctuation">**</span></span>).
+
+⚠️ <span class="token bold"><span class="token punctuation">**</span><span class="token content">Pegadinhas Comuns:</span><span class="token punctuation">**</span></span>
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Supervisionado vs. Não Supervisionado:</span><span class="token punctuation">**</span></span> Se os dados têm a resposta esperada (rótulo), é Supervisionado (ex: prever preço de casas). Se não têm resposta e o algoritmo apenas agrupa dados semelhantes, é Não Supervisionado (ex: segmentação de clientes por perfil).
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Overfitting vs. Underfitting:</span><span class="token punctuation">**</span></span> <span class="token italic"><span class="token punctuation">*</span><span class="token content">Overfitting</span><span class="token punctuation">*</span></span> (Sobreajuste) ocorre quando o modelo "decora" os dados de treino e falha no mundo real. <span class="token italic"><span class="token punctuation">*</span><span class="token content">Underfitting</span><span class="token punctuation">*</span></span> (Subajuste) ocorre quando o modelo é demasiado simples para captar os padrões dos dados.
+
+<span class="token hr punctuation">---</span>
+
+<span class="token title important"><span class="token punctuation">##</span> 📌 Módulo 2: Pré-processamento e Engenharia de Características (Aula 03)</span>
+
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Conceitos-Chave:</span><span class="token punctuation">**</span></span> A qualidade dos dados dita a qualidade do modelo ("Garbage in, garbage out"). Algoritmos não processam valores ausentes, textos puros ou escalas díspares.
+
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 1 (Simples e Intuitivo):</span><span class="token punctuation">**</span></span> É o equivalente a preparar os ingredientes antes de cozinhar. Tens de lavar os legumes, retirar as partes estragadas (dados nulos) e cortar tudo do mesmo tamanho (escalonamento) para que o prato não fique arruinado.
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 2 (Intermediário com Exemplos):</span><span class="token punctuation">**</span></span> Se a variável "Idade" varia de 0 a 100 e a "Renda" varia de 0 a 150.000, o modelo matemático vai achar erradamente que a renda é mais importante só porque o número é maior. Além disso, a matemática não lê as palavras "Sim" e "Não", pelo que temos de as converter em "1" e "0".
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 3 (Técnica e Profissional):</span><span class="token punctuation">**</span></span> A fase de pré-processamento consome cerca de 80% do tempo do projeto. Envolve a <span class="token bold"><span class="token punctuation">**</span><span class="token content">Imputação</span><span class="token punctuation">**</span></span> (substituição de valores <span class="token italic"><span class="token punctuation">*</span><span class="token content">NaN</span><span class="token punctuation">*</span></span> pela média ou mediana), <span class="token bold"><span class="token punctuation">**</span><span class="token content">Codificação Categórica</span><span class="token punctuation">**</span></span> (usando matrizes esparsas como o <span class="token italic"><span class="token punctuation">*</span><span class="token content">One-Hot Encoding</span><span class="token punctuation">*</span></span>) e <span class="token bold"><span class="token punctuation">**</span><span class="token content">Escalonamento de Características</span><span class="token punctuation">**</span></span> (através de <span class="token italic"><span class="token punctuation">*</span><span class="token content">MinMaxScaler</span><span class="token punctuation">*</span></span> ou <span class="token italic"><span class="token punctuation">*</span><span class="token content">StandardScaler</span><span class="token punctuation">*</span></span> para normalização e padronização geométrica).
+
+⚠️ <span class="token bold"><span class="token punctuation">**</span><span class="token content">Pegadinhas Comuns:</span><span class="token punctuation">**</span></span>
+<span class="token list punctuation">*</span> Nunca elimines linhas com dados ausentes (<span class="token code-snippet code keyword">`dropna`</span>) de forma impulsiva, pois perdes informação valiosa. Utiliza sempre estratégias de imputação, a menos que o atributo tenha quase 100% de valores nulos.
+
+<span class="token hr punctuation">---</span>
+
+<span class="token title important"><span class="token punctuation">##</span> 📌 Módulo 3: Regressão Linear e Regularização (Aula 04)</span>
+
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Conceitos-Chave:</span><span class="token punctuation">**</span></span> O objetivo é encontrar a melhor reta (hiperplano) que se ajuste a dados numéricos contínuos, minimizando o Erro Quadrático Médio (MSE).
+
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 1 (Simples e Intuitivo):</span><span class="token punctuation">**</span></span> Imagina dezenas de pontos desenhados numa folha de papel. A regressão linear procura desenhar uma linha reta que passe exatamente no meio de todos os pontos, com a menor distância possível para cada um deles.
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 2 (Intermediário com Exemplos):</span><span class="token punctuation">**</span></span> Para ajustar essa reta, usamos o <span class="token bold"><span class="token punctuation">**</span><span class="token content">Gradiente Descendente</span><span class="token punctuation">**</span></span>. Imagina uma pessoa de olhos vendados a tentar descer uma montanha. Ela sente a inclinação do terreno com o pé e dá pequenos passos (a Taxa de Aprendizado) até chegar ao fundo do vale (onde o erro é zero).
+<span class="token list punctuation">*</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Nível 3 (Técnica e Profissional):</span><span class="token punctuation">**</span></span> O modelo otimiza os coeficientes $	heta$ calculando as derivadas parciais da função de custo MSE. Para evitar o <span class="token italic"><span class="token punctuation">*</span><span class="token content">overfitting</span><span class="token punctuation">*</span></span> em modelos complexos (como a Regressão Polinomial), aplicamos <span class="token bold"><span class="token punctuation">**</span><span class="token content">Regularização</span><span class="token punctuation">**</span></span>: restrições matemáticas na função de custo. A norma L2 (Ridge) encolhe os pesos numéricos; a norma L1 (Lasso) atua como seletor de características, forçando pesos irrelevantes a zero absoluto.
+
+<span class="token title important"><span class="token punctuation">###</span> 💻 Prática em Código (Scikit-Learn)</span>
+
+```python
+from sklearn.linear_model import LinearRegression, SGDRegressor, Ridge, Lasso, ElasticNet
+from sklearn.preprocessing import PolynomialFeatures
+
+<span class="token title important"><span class="token punctuation">#</span> 1. Regressão Linear Clássica (Equação Normal) {#1-regressão-linear-clássica-equação-normal }</span>
+modelo_linear = LinearRegression()
+modelo_linear.fit(caracteristicas_treino, alvo_treino)
+print("Ponto de Interceção:", modelo_linear.intercept_)
+print("Pesos/Coeficientes:", modelo_linear.coef_)
+
+<span class="token title important"><span class="token punctuation">#</span> 2. Gradiente Descendente Estocástico (SGD) - Para Datasets Gigantes {#2-gradiente-descendente-estocástico-sgd---para-datasets-gigantes }</span>
+<span class="token title important"><span class="token punctuation">#</span> O .ravel() converte a matriz alvo num vetor 1D, exigido pelo algoritmo {#o-ravel-converte-a-matriz-alvo-num-vetor-1d-exigido-pelo-algoritmo }</span>
+modelo_sgd = SGDRegressor(max_iter=1000, tol=1e-5, eta0=0.01, random_state=42)
+modelo_sgd.fit(caracteristicas_treino, alvo_treino.ravel())
+
+<span class="token title important"><span class="token punctuation">#</span> 3. Regressão Polinomial (Para dados que formam curvas) {#3-regressão-polinomial-para-dados-que-formam-curvas }</span>
+<span class="token title important"><span class="token punctuation">#</span> Cria características elevadas ao quadrado (grau 2) {#cria-características-elevadas-ao-quadrado-grau-2 }</span>
+gerador_polinomial = PolynomialFeatures(degree=2, include_bias=False)
+caracteristicas_curvas = gerador_polinomial.fit_transform(caracteristicas_treino)
+modelo_linear.fit(caracteristicas_curvas, alvo_treino)
+
+<span class="token title important"><span class="token punctuation">#</span> 4. Regularização (Penalização para evitar Overfitting) {#4-regularização-penalização-para-evitar-overfitting }</span>
+modelo_ridge = Ridge(alpha=0.1, solver="cholesky") # Penalidade L2
+modelo_lasso = Lasso(alpha=0.1)                    # Penalidade L1 (Pode zerar coeficientes)
+modelo_elastic = ElasticNet(alpha=0.1, l1_ratio=0.5) # Mistura 50/50 de Ridge e Lasso
+</code></pre><hr>
+<h2>📌 Módulo 4: Regressão Logística e Métricas (Aula 05)</h2>
+<p><strong>Conceitos-Chave:</strong> Apesar de ter "Regressão" no nome, é um modelo de <strong>Classificação</strong>. Calcula a probabilidade de uma instância pertencer a uma determinada classe.</p>
+<ul>
+<li><strong>Nível 1 (Simples e Intuitivo):</strong> O modelo serve para responder com "Sim" ou "Não" (ex: É fraude?). Em vez de dar um número solto, dá uma percentagem de probabilidade. Se for maior que 50%, classifica como "Sim".</li>
+<li><strong>Nível 2 (Intermediário com Exemplos):</strong> A matemática baseia-se na função <strong>Sigmoide</strong>, que tem a forma de um "S" e esmaga qualquer número de entrada para um limite estrito entre 0 e 1. A função de custo não é o MSE, mas sim o <strong>Log Loss</strong> (Entropia Cruzada), que pune severamente o modelo se este der 99% de certeza a uma resposta errada.</li>
+<li><strong>Nível 3 (Técnica e Profissional):</strong> A avaliação do desempenho é crítica e vai além da <em>Acurácia</em> global. Analisamos a <strong>Precisão</strong> (rácios de falsos positivos), a <strong>Revocação / Recall</strong> (rácios de falsos negativos) e a <strong>F1-Score</strong> (média harmónica). Num cenário multiclasse, a Regressão Logística generaliza-se através da função <strong>Softmax</strong>, convertendo pontuações brutas em probabilidades para múltiplas categorias (ex: Baixo, Médio, Alto).</li>
+</ul>
+<h3>💻 Prática em Código (Scikit-Learn)</h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>linear_model <span class="token keyword keyword-import">import</span> LogisticRegression
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword keyword-import">import</span> confusion_matrix<span class="token punctuation">,</span> precision_score<span class="token punctuation">,</span> recall_score<span class="token punctuation">,</span> f1_score
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> cross_val_predict
+
+<span class="token comment"># 1. Treinamento Base (C é o inverso do Alpha. Um C maior = menos regularização) {#1-treinamento-base-c-é-o-inverso-do-alpha-um-c-maior--menos-regularização }</span>
+modelo_classificador <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span>C<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+modelo_classificador<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> categorias_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># 2. Previsão Direta vs Probabilidade {#2-previsão-direta-vs-probabilidade }</span>
+categoria_final <span class="token operator">=</span> modelo_classificador<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>novos_dados<span class="token punctuation">)</span>       <span class="token comment"># Devolve a classe final (Ex: 1)</span>
+probabilidade_exata <span class="token operator">=</span> modelo_classificador<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>novos_dados<span class="token punctuation">)</span> <span class="token comment"># Devolve as % (Ex: [0.15, 0.85])</span>
+
+<span class="token comment"># 3. Avaliação com Validação Cruzada e Métricas {#3-avaliação-com-validação-cruzada-e-métricas }</span>
+previsoes_cruzadas <span class="token operator">=</span> cross_val_predict<span class="token punctuation">(</span>modelo_classificador<span class="token punctuation">,</span> caracteristicas_treino<span class="token punctuation">,</span> categorias_treino<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+
+matriz_erros <span class="token operator">=</span> confusion_matrix<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span>
+precisao <span class="token operator">=</span> precision_score<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span>
+revocacao <span class="token operator">=</span> recall_score<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span> <span class="token comment"># Fundamental para não deixar escapar casos positivos</span>
+f1 <span class="token operator">=</span> f1_score<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> previsoes_cruzadas<span class="token punctuation">)</span>
+
+<span class="token comment"># 4. Ajuste de Limiar (Threshold) da Fronteira de Decisão {#4-ajuste-de-limiar-threshold-da-fronteira-de-decisão }</span>
+<span class="token comment"># Se quisermos focar em não deixar escapar NENHUM positivo (Recall alto), baixamos o limite {#se-quisermos-focar-em-não-deixar-escapar-nenhum-positivo-recall-alto-baixamos-o-limite }</span>
+pontuacoes_brutas <span class="token operator">=</span> cross_val_predict<span class="token punctuation">(</span>modelo_classificador<span class="token punctuation">,</span> caracteristicas_treino<span class="token punctuation">,</span> categorias_treino<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> method<span class="token operator">=</span><span class="token string">"decision_function"</span><span class="token punctuation">)</span>
+limite_permissivo <span class="token operator">=</span> <span class="token number">0.3</span> <span class="token comment"># O padrão é 0.0 (50%). Baixamos para 0.3.</span>
+previsoes_ajustadas <span class="token operator">=</span> <span class="token punctuation">(</span>pontuacoes_brutas <span class="token operator">&gt;</span> limite_permissivo<span class="token punctuation">)</span>
+
+<span class="token comment"># 5. Regressão Softmax (Múltiplas Categorias em vez de apenas Sim/Não) {#5-regressão-softmax-múltiplas-categorias-em-vez-de-apenas-simnão }</span>
+modelo_multiclasse <span class="token operator">=</span> LogisticRegression<span class="token punctuation">(</span>multi_class<span class="token operator">=</span><span class="token string">"multinomial"</span><span class="token punctuation">,</span> solver<span class="token operator">=</span><span class="token string">"lbfgs"</span><span class="token punctuation">,</span> C<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+modelo_multiclasse<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> categorias_multiplas<span class="token punctuation">)</span>
+</code></pre><hr>
+<h2>📌 Módulo 5: Projeto de Ponta a Ponta (Aula 06)</h2>
+<p><strong>Conceitos-Chave:</strong> Num cenário profissional, o modelo de Machine Learning é apenas a ponta do iceberg. O projeto exige automação integral através de <em>Pipelines</em> para evitar o Vazamento de Dados (<em>Data Leakage</em>).</p>
+<ul>
+<li><strong>Nível 1 (Simples e Intuitivo):</strong> Em vez de tratar os dados "à mão" um a um, constróis uma linha de montagem de fábrica. Os dados brutos entram de um lado, são limpos, transformados, previstos e empacotados do outro lado de forma 100% automática.</li>
+<li><strong>Nível 2 (Intermediário com Exemplos):</strong> A Análise Exploratória (EDA) é vital antes do modelo. Visualizamos mapas (latitude/longitude), procuramos correlações de Pearson (quais colunas impactam mais o preço) e criamos novas colunas (ex: dividir o número de quartos pelo número de famílias).</li>
+<li><strong>Nível 3 (Técnica e Profissional):</strong> Utiliza-se o <code>ColumnTransformer</code> para bifurcar as transformações: variáveis contínuas passam por Imputação e Padronização; variáveis categóricas passam por <em>One-Hot Encoding</em>. O modelo é encapsulado no <em>Pipeline</em> e avaliado via <em>Validação Cruzada</em>. Por fim, não "chutamos" os hiperparâmetros: automatizamos a pesquisa profunda com o <code>GridSearchCV</code> e persistimos o objeto binário para produção com a biblioteca <code>joblib</code>.</li>
+</ul>
+<h3>💻 Prática em Código (Scikit-Learn)</h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> numpy <span class="token keyword keyword-as">as</span> np
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> StratifiedShuffleSplit<span class="token punctuation">,</span> GridSearchCV<span class="token punctuation">,</span> cross_val_score
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>pipeline <span class="token keyword keyword-import">import</span> make_pipeline
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>compose <span class="token keyword keyword-import">import</span> make_column_transformer<span class="token punctuation">,</span> make_column_selector
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>impute <span class="token keyword keyword-import">import</span> SimpleImputer
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> StandardScaler<span class="token punctuation">,</span> OneHotEncoder
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>ensemble <span class="token keyword keyword-import">import</span> RandomForestRegressor
+<span class="token keyword keyword-import">import</span> joblib
+
+<span class="token comment"># 1. Separação Estratificada (Garante que Treino/Teste têm a mesma proporção da vida real) {#1-separação-estratificada-garante-que-treinoteste-têm-a-mesma-proporção-da-vida-real }</span>
+separador <span class="token operator">=</span> StratifiedShuffleSplit<span class="token punctuation">(</span>n_splits<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-for">for</span> indice_treino<span class="token punctuation">,</span> indice_teste <span class="token keyword keyword-in">in</span> separador<span class="token punctuation">.</span>split<span class="token punctuation">(</span>dados_brutos<span class="token punctuation">,</span> dados_brutos<span class="token punctuation">[</span><span class="token string">"categoria_renda"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    dados_treino <span class="token operator">=</span> dados_brutos<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>indice_treino<span class="token punctuation">]</span>
+    dados_teste <span class="token operator">=</span> dados_brutos<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>indice_teste<span class="token punctuation">]</span>
+
+<span class="token comment"># 2. Análise Exploratória Rápida (EDA) {#2-análise-exploratória-rápida-eda }</span>
+<span class="token comment"># Matriz de correlação linear para perceber o que afeta o alvo {#matriz-de-correlação-linear-para-perceber-o-que-afeta-o-alvo }</span>
+matriz_correlacao <span class="token operator">=</span> dados_treino<span class="token punctuation">.</span>corr<span class="token punctuation">(</span>numeric_only<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>matriz_correlacao<span class="token punctuation">[</span><span class="token string">"alvo_preco"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sort_values<span class="token punctuation">(</span>ascending<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 3. Construção das Linhas de Montagem (Pipelines) {#3-construção-das-linhas-de-montagem-pipelines }</span>
+esteira_numerica <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    SimpleImputer<span class="token punctuation">(</span>strategy<span class="token operator">=</span><span class="token string">"median"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment"># Tapa buracos com a mediana</span>
+    StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>                  <span class="token comment"># Padroniza escalas</span>
+<span class="token punctuation">)</span>
+
+esteira_texto <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    SimpleImputer<span class="token punctuation">(</span>strategy<span class="token operator">=</span><span class="token string">"most_frequent"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                    <span class="token comment"># Tapa buracos com o mais frequente</span>
+    OneHotEncoder<span class="token punctuation">(</span>handle_unknown<span class="token operator">=</span><span class="token string">"ignore"</span><span class="token punctuation">,</span> sparse_output<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span> <span class="token comment"># Texto para colunas binárias densas</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 4. Orquestrador Central (Column Transformer) {#4-orquestrador-central-column-transformer }</span>
+processador_global <span class="token operator">=</span> make_column_transformer<span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>esteira_numerica<span class="token punctuation">,</span> make_column_selector<span class="token punctuation">(</span>dtype_include<span class="token operator">=</span>np<span class="token punctuation">.</span>number<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>esteira_texto<span class="token punctuation">,</span> make_column_selector<span class="token punctuation">(</span>dtype_include<span class="token operator">=</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 5. Pipeline Completo: Tratamento + Modelo de Floresta Aleatória {#5-pipeline-completo-tratamento--modelo-de-floresta-aleatória }</span>
+pipeline_final <span class="token operator">=</span> make_pipeline<span class="token punctuation">(</span>
+    processador_global<span class="token punctuation">,</span>
+    RandomForestRegressor<span class="token punctuation">(</span>random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment"># 6. Otimização de Hiperparâmetros (Grid Search vs Randomized Search) {#6-otimização-de-hiperparâmetros-grid-search-vs-randomized-search }</span>
+<span class="token comment"># O algoritmo vai testar todas as combinações destas listas automaticamente {#o-algoritmo-vai-testar-todas-as-combinações-destas-listas-automaticamente }</span>
+grelha_de_parametros <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'randomforestregressor__max_features'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">'randomforestregressor__n_estimators'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+buscador_otimizado <span class="token operator">=</span> GridSearchCV<span class="token punctuation">(</span>pipeline_final<span class="token punctuation">,</span> grelha_de_parametros<span class="token punctuation">,</span> cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> scoring<span class="token operator">=</span><span class="token string">'neg_root_mean_squared_error'</span><span class="token punctuation">)</span>
+buscador_otimizado<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> alvo_treino<span class="token punctuation">)</span> <span class="token comment"># Executa o treino massivo</span>
+
+<span class="token comment"># Extrai o modelo vencedor {#extrai-o-modelo-vencedor }</span>
+melhor_modelo_pronto <span class="token operator">=</span> buscador_otimizado<span class="token punctuation">.</span>best_estimator_
+
+<span class="token comment"># 7. Persistência do Modelo (Salvar o trabalho final) {#7-persistência-do-modelo-salvar-o-trabalho-final }</span>
+joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>melhor_modelo_pronto<span class="token punctuation">,</span> <span class="token string">"modelo_final_producao.pkl"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># (No momento da entrada em produção no servidor:) {#no-momento-da-entrada-em-produção-no-servidor }</span>
+<span class="token comment"># modelo_em_producao = joblib.load("modelo_final_producao.pkl") {#modelo_em_producao--joblibloadmodelo_final_producaopkl }</span>
+<span class="token comment"># previsao_cliente = modelo_em_producao.predict(dados_novos_cliente) {#previsao_cliente--modelo_em_producaopredictdados_novos_cliente }</span>
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>Sendo 100% rigoroso, o guião anterior cobriu a **espinha dorsal** de toda a teoria e os códigos mais importantes para o funcionamento dos modelos. No entanto, para que o material seja didático e não vire uma cópia exata de dezenas de páginas de PDF, alguns **tópicos avançados e códigos de otimização específicos** foram condensados ou deixados de fora.
+
+Se você quiser ter a garantia de que **absolutamente tudo** o que estava nos cadernos está no seu `.md` (especialmente para consultas futuras no mercado de trabalho), adicione este bloco final ao seu arquivo. Ele contém as técnicas avançadas que fecham a lacuna dos arquivos 04, 05 e 06:
+
+***
+
+```markdown
+## 📌 Módulo Bônus: Técnicas Avançadas e Otimização
+
+### 1. Parada Antecipada (Early Stopping) e Curvas de Aprendizado (Aula 04)
+**Conceito:** O *Early Stopping* interrompe o treinamento assim que o erro de validação atinge o seu mínimo, evitando que o modelo continue a treinar e entre em *Overfitting* (sobreajuste). As *Curvas de Aprendizado* permitem visualizar graficamente esse fenômeno.
+
+```python
+from sklearn.base import clone
+from sklearn.metrics import mean_squared_error
+
+# 1. Parada Antecipada (Early Stopping) com SGD {#1-parada-antecipada-early-stopping-com-sgd }
+# warm_start=True permite que o modelo continue o treinamento de onde parou em vez de reiniciar {#warm_starttrue-permite-que-o-modelo-continue-o-treinamento-de-onde-parou-em-vez-de-reiniciar }
+modelo_sgd = SGDRegressor(max_iter=1, tol=None, warm_start=True, penalty=None, learning_rate="constant", eta0=0.0005, random_state=42)
+
+erro_minimo_validacao = float("inf")
+melhor_modelo = None
+
+for epoca in range(1000):
+    modelo_sgd.fit(caracteristicas_treino, alvo_treino) # Treina uma época
+    previsao_validacao = modelo_sgd.predict(caracteristicas_validacao)
+    erro_validacao = mean_squared_error(alvo_validacao, previsao_validacao)
+    
+    if erro_validacao &lt; erro_minimo_validacao:
+        erro_minimo_validacao = erro_validacao
+        melhor_modelo = clone(modelo_sgd) # Salva uma cópia do modelo no seu melhor momento
+
+# 2. Curvas de Aprendizado (Learning Curves) {#2-curvas-de-aprendizado-learning-curves }
+from sklearn.model_selection import learning_curve
+import matplotlib.pyplot as plt
+
+tamanhos_treino, erros_treino, erros_validacao = learning_curve(
+    modelo_linear, caracteristicas_treino, alvo_treino, cv=5, scoring="neg_mean_squared_error"
+)
+# (A plotagem do gráfico com plt.plot ajuda a diagnosticar Overfitting vs Underfitting) {#a-plotagem-do-gráfico-com-pltplot-ajuda-a-diagnosticar-overfitting-vs-underfitting }
+</code></pre><h3>2. Avaliação Visual com Curva ROC (Aula 05)</h3>
+<p><strong>Conceito:</strong> A Curva ROC plota a Taxa de Verdadeiros Positivos (Recall) contra a Taxa de Falsos Positivos para todos os limiares de classificação possíveis. Quanto mais próxima a curva estiver do canto superior esquerdo, melhor é o classificador.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword keyword-import">import</span> roc_curve
+<span class="token keyword keyword-import">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword keyword-as">as</span> plt
+
+<span class="token comment"># Calcula as taxas para a curva ROC {#calcula-as-taxas-para-a-curva-roc }</span>
+fpr<span class="token punctuation">,</span> tpr<span class="token punctuation">,</span> limiares <span class="token operator">=</span> roc_curve<span class="token punctuation">(</span>categorias_treino<span class="token punctuation">,</span> pontuacoes_brutas<span class="token punctuation">)</span>
+
+<span class="token comment"># Plotagem básica da Curva ROC {#plotagem-básica-da-curva-roc }</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>fpr<span class="token punctuation">,</span> tpr<span class="token punctuation">,</span> linewidth<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"Curva ROC"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'k--'</span><span class="token punctuation">)</span> <span class="token comment"># Reta tracejada representando um classificador aleatório</span>
+plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">"Taxa de Falsos Positivos (FPR)"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">"Taxa de Verdadeiros Positivos (TPR) - Recall"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">"Curva ROC do Classificador Logístico"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><h3>3. Busca Aleatória e Transformadores Customizados em Classe (Aula 06)</h3>
+<p><strong>Conceito:</strong> Enquanto o <code>GridSearchCV</code> testa todas as combinações exatas, o <code>RandomizedSearchCV</code> sorteia valores aleatórios dentro de uma distribuição estatística, sendo muito mais eficiente quando o espaço de busca é vasto. Além disso, para transformações complexas que precisam "aprender" algo dos dados de treino (como <code>fit</code>), precisamos criar classes baseadas no Scikit-Learn.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword keyword-import">import</span> RandomizedSearchCV
+<span class="token keyword keyword-from">from</span> scipy<span class="token punctuation">.</span>stats <span class="token keyword keyword-import">import</span> randint<span class="token punctuation">,</span> expon
+<span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>base <span class="token keyword keyword-import">import</span> BaseEstimator<span class="token punctuation">,</span> TransformerMixin
+
+<span class="token comment"># 1. Busca Aleatória (Randomized Search) {#1-busca-aleatória-randomized-search }</span>
+<span class="token comment"># Usamos distribuições estatísticas como randint (inteiros) e expon (exponencial) {#usamos-distribuições-estatísticas-como-randint-inteiros-e-expon-exponencial }</span>
+distribuicao_parametros <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'randomforestregressor__max_features'</span><span class="token punctuation">:</span> randint<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> high<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'randomforestregressor__n_estimators'</span><span class="token punctuation">:</span> randint<span class="token punctuation">(</span>low<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> high<span class="token operator">=</span><span class="token number">150</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+busca_aleatoria <span class="token operator">=</span> RandomizedSearchCV<span class="token punctuation">(</span>
+    pipeline_final<span class="token punctuation">,</span> 
+    param_distributions<span class="token operator">=</span>distribuicao_parametros<span class="token punctuation">,</span> 
+    n_iter<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token comment"># Testa 10 combinações aleatórias diferentes</span>
+    cv<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> 
+    scoring<span class="token operator">=</span><span class="token string">'neg_root_mean_squared_error'</span><span class="token punctuation">,</span> 
+    random_state<span class="token operator">=</span><span class="token number">42</span>
+<span class="token punctuation">)</span>
+busca_aleatoria<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>caracteristicas_treino<span class="token punctuation">,</span> alvo_treino<span class="token punctuation">)</span>
+
+<span class="token comment"># 2. Transformador Customizado (BaseEstimator, TransformerMixin) {#2-transformador-customizado-baseestimator-transformermixin }</span>
+<span class="token comment"># Permite integração perfeita com Pipelines para comportamentos não nativos do Scikit-Learn {#permite-integração-perfeita-com-pipelines-para-comportamentos-não-nativos-do-scikit-learn }</span>
+<span class="token keyword keyword-class">class</span> <span class="token class-name">MeuTransformador</span><span class="token punctuation">(</span>BaseEstimator<span class="token punctuation">,</span> TransformerMixin<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> adicionar_coluna_extra<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>adicionar_coluna_extra <span class="token operator">=</span> adicionar_coluna_extra
+        
+    <span class="token keyword keyword-def">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> X<span class="token punctuation">,</span> y<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-return">return</span> self <span class="token comment"># Nada a aprender dos dados neste caso específico</span>
+        
+    <span class="token keyword keyword-def">def</span> <span class="token function">transform</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> X<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-if">if</span> self<span class="token punctuation">.</span>adicionar_coluna_extra<span class="token punctuation">:</span>
+            coluna_nova <span class="token operator">=</span> X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> X<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword keyword-return">return</span> np<span class="token punctuation">.</span>c_<span class="token punctuation">[</span>X<span class="token punctuation">,</span> coluna_nova<span class="token punctuation">]</span>
+        <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-return">return</span> X
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>***
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
